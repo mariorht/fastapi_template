@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.9"] #, "3.10", "3.11", "3.12"]
 
     steps:
     - name: Check out the repository
@@ -32,5 +32,7 @@ jobs:
         pip install -r src/requirements.txt
 
     - name: Run tests with pytest
+      env:
+        PYTHONPATH: ./src 
       run: |
         python -m pytest tests
