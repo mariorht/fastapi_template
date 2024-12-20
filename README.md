@@ -109,10 +109,5 @@ To run the tests, you can use the provided script:
 - **Backend:** FastAPI
 - **Frontend:** HTML and JavaScript (served as static files)
 - **Containerization:** Docker and Docker Compose
-
----
-
-This template provides a flexible and scalable foundation for building FastAPI applications, offering the choice of virtual environments or Docker-based workflows.
-
-🎉 Happy coding! 🎉
+- **Tests:** pytest
 
