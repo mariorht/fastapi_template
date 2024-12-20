@@ -1,5 +1,8 @@
 # FastAPI Project Template
 
+![example workflow](https://github.com/mariorht/fastapi_template/actions/workflows/run-tests.yml/badge.svg)
+
+
 **FastAPI Project Template** is a base structure for creating applications using FastAPI. It supports running either in a virtual environment or in Docker containers and provides examples of routing and static file handling.
 
 ---
