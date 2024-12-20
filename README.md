@@ -93,6 +93,14 @@
 
 ---
 
+## Running Tests
+
+To run the tests, you can use the provided script:
+
+```bash
+./run_tests.sh
+
+
 ## Technologies Used
 
 - **Backend:** FastAPI

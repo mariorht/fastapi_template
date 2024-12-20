@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -8,18 +9,16 @@ app = FastAPI()
 # Register the hello router
 app.include_router(hello_router, prefix="/hello")
 
+# Set the correct paths for static files and templates
+base_dir = os.path.dirname(os.path.abspath(__file__))
+static_dir = os.path.join(base_dir, "static")
+template_dir = os.path.join(static_dir, "templates")
+
 # Serve static files
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/templates", StaticFiles(directory=template_dir), name="templates")
 
 
-# Serve index.html on the root path
-@app.get("/")
-async def serve_index():
-    return FileResponse("app/static/templates/index.html")
+@app.get("/", response_class=FileResponse)
+def serve_index():
+    return os.path.join(template_dir, "index.html")
 
-
-# Log registered routes
-@app.on_event("startup")
-async def log_routes():
-    for route in app.routes:
-        print(f"Ruta: {route.path} -> {route.name}")
