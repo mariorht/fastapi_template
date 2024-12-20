@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./src
+    environment:
+      - ENVIRONMENT_VARIABLE=${ENVIRONMENT_VARIABLE}
+    ports:
+      - "8001:8001"
+
