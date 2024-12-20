@@ -66,7 +66,7 @@
 1. **Prerequisites:**
    - Ensure **Docker** and **Docker Compose** are installed.
 
-2. *Use the `start_docker.sh` Script:**
+2. **Use the `start_docker.sh` Script:**
 
    From the project's root directory, execute:
 
